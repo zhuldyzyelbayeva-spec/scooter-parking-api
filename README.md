@@ -39,7 +39,6 @@ The project follows a layered architecture:
 
 ### Create user
 
-
 Request body example:
 ```json
 {
