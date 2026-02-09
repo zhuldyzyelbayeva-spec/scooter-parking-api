@@ -16,28 +16,29 @@ public class UserController {
         this.userService = userService;
     }
 
-    // ================== GET ALL ==================
+    //  GET ALL 
     @GetMapping
     public List<User> getUsers() {
         return userService.getAllUsers();
     }
 
-    // ================== CREATE ==================
+    //  CREATE 
     @PostMapping
     public User createUser(@RequestBody User user) {
         return userService.createUser(user);
     }
 
-    // ================== UPDATE ==================
+    //  UPDATE 
     @PutMapping("/{id}")
     public User updateUser(@PathVariable Long id,
                            @RequestBody User user) {
         return userService.updateUser(id, user);
     }
 
-    // ================== DELETE ==================
+    //  DELETE 
     @DeleteMapping("/{id}")
     public void deleteUser(@PathVariable Long id) {
         userService.deleteUser(id);
     }
 }
+
