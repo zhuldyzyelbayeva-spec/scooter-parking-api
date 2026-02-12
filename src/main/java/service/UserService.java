@@ -18,9 +18,17 @@ public class UserService {
     }
 
     
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+   public List<User> getAllUsers() {
+
+    if (cache.contains(USERS_CACHE_KEY)) {
+        return (List<User>) cache.get(USERS_CACHE_KEY);
     }
+
+    List<User> users = userRepository.findAll();
+    cache.put(USERS_CACHE_KEY, users);
+    return users;
+}
+
 
     public User createUser(User user) {
         return userRepository.save(user);
@@ -45,4 +53,5 @@ public class UserService {
         userRepository.deleteById(id);
     }
 }
+
 
