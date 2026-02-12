@@ -1,4 +1,6 @@
-package com.endterm.scooterparkingapi.service;
+package service;
+import com.endterm.scooterparkingapi.cache.SimpleCache;
+
 
 import com.endterm.scooterparkingapi.model.User;
 import com.endterm.scooterparkingapi.repository.UserRepository;
@@ -10,24 +12,25 @@ import java.util.List;
 @Service
 public class UserService {
 
+    private final SimpleCache cache = SimpleCache.getInstance();
+    private static final String USERS_CACHE_KEY = "all_users";
+
     private final UserRepository userRepository;
 
-    
     public UserService(UserRepository userRepository) {
         this.userRepository = userRepository;
     }
 
-    
-   public List<User> getAllUsers() {
+    public List<User> getAllUsers() {
 
-    if (cache.contains(USERS_CACHE_KEY)) {
-        return (List<User>) cache.get(USERS_CACHE_KEY);
+        if (cache.contains(USERS_CACHE_KEY)) {
+            return (List<User>) cache.get(USERS_CACHE_KEY);
+        }
+
+        List<User> users = userRepository.findAll();
+        cache.put(USERS_CACHE_KEY, users);
+        return users;
     }
-
-    List<User> users = userRepository.findAll();
-    cache.put(USERS_CACHE_KEY, users);
-    return users;
-}
 
 
     public User createUser(User user) {
@@ -53,5 +56,3 @@ public class UserService {
         userRepository.deleteById(id);
     }
 }
-
-
