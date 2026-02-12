@@ -122,7 +122,7 @@ This ensures data consistency while improving read performance.
 The project uses H2 in-memory database.
 The schema is generated automatically by Hibernate.
 
-H2 console available at:
+H2 Console:
 http://localhost:8080/h2-console
 
 ---
@@ -133,8 +133,9 @@ http://localhost:8080/h2-console
 1. Open the project in IntelliJ IDEA
 2. Load Maven dependencies
 3. Run ScooterParkingApiApplication
-4. Access API at:
-   http://localhost:8080
+4. Application runs at:
+http://localhost:8080
+
 
 ---
 
