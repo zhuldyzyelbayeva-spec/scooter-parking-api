@@ -76,17 +76,18 @@ The portfolio adapts to mobile, tablet, and desktop screen sizes.
 ## Project Structure
 
 Assignment_3_Responsive_Web_Design/
--│
--├── index.html
--├── README.md
--│
--├── css/
--│   └── style.css
--│
--├── js/
--│   └── script.js
--│
--└── screenshots/
+```│
+├── index.html
+├── README.md
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── screenshots/
+```
 
 - Technologies
 - HTML5
