@@ -76,24 +76,24 @@ The portfolio adapts to mobile, tablet, and desktop screen sizes.
 ## Project Structure
 
 Assignment_3_Responsive_Web_Design/
-│
-├── index.html
-├── README.md
-│
-├── css/
-│   └── style.css
-│
-├── js/
-│   └── script.js
-│
-└── screenshots/
+-│
+-├── index.html
+-├── README.md
+-│
+-├── css/
+-│   └── style.css
+-│
+-├── js/
+-│   └── script.js
+-│
+-└── screenshots/
 
-Technologies
-HTML5
-CSS3
-CSS Media Queries
-Bootstrap 5.3
-JavaScript
+- Technologies
+- HTML5
+- CSS3
+- CSS Media Queries
+- Bootstrap 5.3
+- JavaScript
 
 ## How to Run
 Open the project folder.
@@ -104,9 +104,9 @@ Responsive Breakpoints
 
 The project uses the following custom CSS breakpoints:
 
- Mobile: below 768px
- Tablet: 768px to 991.98px
- Desktop: 992px and above
+- Mobile: below 768px
+- Tablet: 768px to 991.98px
+- Desktop: 992px and above
 
 Bootstrap Grid is used together with custom CSS Media Queries to create responsive layouts.
 
