@@ -1,147 +1,122 @@
-# Scooter Parking API – Endterm Project
+# Assignment #3 — Responsive Web Design
 
-## Project Overview
+## Student
 
-It is a Spring Boot RESTful API that demonstrates:
-- CRUD operations
-- Layered architecture
-- Design patterns
-- SOLID principles
-- In-memory caching mechanism (Bonus Task)
-
-The application manages users in a scooter parking system.
-
----
-
-## Technologies Used
-
-- Java 17+
-- Spring Boot
-- Spring Data JPA
-- H2 In-Memory Database
-- Maven
-- Postman
-
----
-
-## Project Architecture
-
-The project follows a layered architecture:
-
-- controller – REST endpoints
-- service – business logic
-- repository – data access layer
-- model – entity classes
-- patterns – Factory and Builder patterns
-- cache – Singleton in-memory caching layer
-- utils – helper classes
-
-The architecture respects SOLID principles and separation of concerns.
-
----
-
-## REST API Endpoints
-
-### Get all users
-GET /users
-
-### Create user
-POST /users
-
-Example request body:
-{
-  "name": "David",
-  "rating": 4.5
-}
-
-### Update user
-PUT /users/{id}
-
-### Delete user
-DELETE /users/{id}
-
----
-
-## Design Patterns Used
-
-### Factory Pattern
-Used to create User objects based on type (e.g., VIP user).
-
-### Builder Pattern
-Used for flexible and readable object creation.
-
-### Singleton Pattern
-Used in the caching layer to ensure only one cache instance exists.
-
----
-
-# Bonus Task - Simple In-Memory Cache
+- Name: Yelbayeva Zhuldyz
+- Group: SE-2522
 
 ## Objective
 
-Enhance application performance by implementing a simple in-memory caching mechanism for frequently requested data.
+The goal of this assignment is to create responsive web pages using CSS Media Queries and the Bootstrap Grid system.
 
+The project demonstrates how a webpage adapts to different screen sizes:
+- Mobile
+- Tablet
+- Desktop
 
-## Implementation Details
+## Tasks
 
-A custom caching layer was implemented using:
+### Task 0 — Responsive Typography
 
-- HashMap for in-memory storage
-- Singleton pattern to guarantee a single cache instance
-- Manual cache invalidation strategy
+A simple webpage section with headings and paragraphs was created.
 
-The method `getAllUsers()` is cached.
+CSS Media Queries are used to change font sizes for different screen sizes:
 
-Repeated calls return cached data instead of querying the database again.
+- Mobile: smaller font size
+- Tablet: medium font size
+- Desktop: larger font size
 
+### Task 1 — Responsive Layout with Media Queries
 
-## Cache Invalidation Strategy
+Three boxes were created using CSS Flexbox and Media Queries.
 
-The cache is automatically cleared after:
+The layout changes depending on the screen size:
 
-- create operations
-- update operations
-- delete operations
+- Desktop: three boxes in one row
+- Tablet: two boxes in the first row and one box in the second row
+- Mobile: boxes are stacked vertically
 
-This ensures data consistency while improving read performance.
+This task uses only custom CSS Media Queries without Bootstrap Grid.
 
+### Task 2 — Bootstrap Responsive Columns
 
-## Design Constraints Satisfaction
+Three columns were created using Bootstrap's 12-column grid system.
 
-- Cache stored fully in memory
-- Only one cache instance exists (Singleton)
-- Layered architecture preserved
-- SOLID principles maintained
-- No external caching libraries used
+The following Bootstrap classes are used:
 
----
+```text
+col-12
+col-md-6
+col-lg-4
+```
 
+## Responsive behavior:
 
-## Database
+Mobile: col-12 — one column takes the full width
+Tablet: col-md-6 — two columns fit in one row
+Desktop: col-lg-4 — three equal columns fit in one row
+Task 3 — Bootstrap Navigation Bar
 
-The project uses H2 in-memory database.
-The schema is generated automatically by Hibernate.
+A responsive Bootstrap navigation bar was created.
 
-H2 Console:
-http://localhost:8080/h2-console
+### It includes:
 
----
+Logo on the left
+Navigation links on the right
+Hamburger menu on smaller screens
+Collapsible navigation links
+Task 4 — Responsive Portfolio Page
 
+A complete responsive portfolio page was created by combining Bootstrap Grid and custom CSS Media Queries.
 
-## How to Run the Application
+### The portfolio contains:
 
-1. Open the project in IntelliJ IDEA
-2. Load Maven dependencies
-3. Run ScooterParkingApiApplication
-4. Application runs at:
-http://localhost:8080
+Responsive Bootstrap navbar
+Project cards
+Bootstrap Grid layout
+Personal information sidebar
+Contact information
+Footer
+Responsive typography and spacing
 
+The portfolio adapts to mobile, tablet, and desktop screen sizes.
 
----
+## Project Structure
+Assignment_3_Responsive_Web_Design/
+│
+├── index.html
+├── README.md
+│
+├── css/
+│   └── style.css
+│
+├── js/
+│   └── script.js
+│
+└── screenshots/
+Technologies
+HTML5
+CSS3
+CSS Media Queries
+Bootstrap 5.3
+JavaScript
+How to Run
+Open the project folder.
+Open index.html in a web browser.
+Make sure you have an Internet connection because Bootstrap 5.3 is loaded from a CDN.
+Resize the browser window or use Chrome DevTools Device Toolbar to test mobile, tablet, and desktop layouts.
+Responsive Breakpoints
 
+The project uses the following custom CSS breakpoints:
 
-## API Testing
+### Mobile: below 768px
+### Tablet: 768px to 991.98px
+### Desktop: 992px and above
 
-All endpoints were tested using Postman.
-Screenshots are available in:
-docs/screenshots
+Bootstrap Grid is used together with custom CSS Media Queries to create responsive layouts.
+
+## Summary
+
+This project demonstrates the principles of responsive web design. CSS Media Queries were used to adapt typography, spacing, and the three-box layout. Bootstrap's 12-column Grid was used to create responsive columns and portfolio cards. A Bootstrap responsive navbar was also implemented with a collapsible hamburger menu.
+
+The final portfolio combines Bootstrap Grid and custom CSS Media Queries to provide a clean and usable layout across mobile, tablet, and desktop screen sizes.
